@@ -17,16 +17,19 @@
 
     <tbody>
         <tr *ngFor="let courses of courses">
-            <td>{{ courses.imageUrl }}</td>
+            <td><img [src]="courses.imageUrl" width="60" height="60"> </td>
             <td>{{ courses.name }}</td>
             <td>{{ courses.price }}</td>
             <td>{{ courses.code }}</td>
             <td>{{ courses.releaseDate }}</td>
             <td> {{courses.duration }} </td>
             <td>{{ courses.qtdAlunos }}</td>
-            <td>{{ courses.rating }}</td>
+            <td>
+              <app-star [rating]="courses.rating"></app-star>
+            </td>
             
             <td></td>
         </tr>
     </tbody>
 </table>
+
